@@ -1,11 +1,18 @@
 // DECLARATIVE
 pipeline{
-	agent {docker{image "node:16.0.0"}}
+	//agent {docker{image "node:16.0.0"}}
+	agent any
+	environment{
+		dockerHome = tool "myDocker"
+		mavenHome = tool "myMaven"
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	}
 	stages{
 		stage('Build'){
 			steps{
 				echo "Build"
-				//sh "node --version"
+				sh "docker --version"
+				sh "mvn --version"
 				echo "PATH - $env.PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
 				echo "BUILD_ID - $env.BUILD_ID"
