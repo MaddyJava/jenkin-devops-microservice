@@ -1,11 +1,12 @@
 package com.in28minutes.microservices.currencyexchangeservice.cucumber;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 import com.in28minutes.microservices.currencyexchangeservice.HelloWorld;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class HelloWorldSteps {
 
